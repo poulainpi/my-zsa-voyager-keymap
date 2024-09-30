@@ -28,6 +28,17 @@
 #error "achordion: QMK version is too old to build. Please update QMK."
 #else
 
+// Short aliases for home row mods and other tap-hold keys.
+#define HOME_C LGUI(KC_C)
+#define HOME_R LALT_T(KC_R)
+#define HOME_S LCTL_T(KC_S)
+#define HOME_T LSFT_T(KC_T)
+
+#define HOME_N RSFT_T(KC_N)
+#define HOME_E RCTL_T(KC_E)
+#define HOME_I LALT_T(KC_I)
+#define HOME_A RGUI(KC_A)
+
 // Copy of the `record` and `keycode` args for the current active tap-hold key.
 static keyrecord_t tap_hold_record;
 static uint16_t tap_hold_keycode = KC_NO;
@@ -335,19 +346,6 @@ __attribute__((weak)) bool achordion_chord(uint16_t tap_hold_keycode,
                                            keyrecord_t* tap_hold_record,
                                            uint16_t other_keycode,
                                            keyrecord_t* other_record) {
-
-  // Exceptionally consider the following chords as holds, even though they
-  // are on the same hand.
-  switch (tap_hold_keycode) {
-    case KC_S:
-      if (other_keycode == KC_B || other_keycode == KC_W) { return true; }
-      break;
-
-    case KC_V:
-      if (other_keycode == KC_P || other_keycode == KC_T || other_keycode == KC_D || other_keycode == KC_B) { return true; }
-      break;
-  }
-
   // allow hold bottom row
   if (tap_hold_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
 
@@ -357,9 +355,14 @@ __attribute__((weak)) bool achordion_chord(uint16_t tap_hold_keycode,
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
-// By default, the timeout is 1000 ms for all keys.
 __attribute__((weak)) uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  return 500;
+  switch (tap_hold_keycode) {
+    // 1500 for the 2 system keys
+    case HOME_C:
+    case HOME_A:
+      return 1500;
+  }
+  return 800;
 }
 
 // By default, Shift and Ctrl mods are eager, and Alt and GUI are not.
