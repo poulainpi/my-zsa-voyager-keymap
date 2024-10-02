@@ -705,7 +705,30 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 // Custom QMK here
+// Short aliases for home row mods and other tap-hold keys.
+#define HOME_C MT(MOD_LGUI, KC_C)
+#define HOME_R MT(MOD_LALT, KC_R)
+#define HOME_S MT(MOD_LCTL, KC_S)
+#define HOME_T MT(MOD_LSFT, KC_T)
+
+#define HOME_N MT(MOD_RSFT, KC_N)
+#define HOME_E MT(MOD_RCTL, KC_E)
+#define HOME_I MT(MOD_LALT, KC_I)
+#define HOME_A MT(MOD_RGUI, KC_A)
+
 
 void matrix_scan_user(void) {
   achordion_task();
+}
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HOME_C:
+        case HOME_A:
+        case HOME_R:
+        case HOME_I:
+            return true;
+        default:
+            return false;
+    }
 }

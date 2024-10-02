@@ -62,3 +62,4 @@
 
 // Custom QMK here
 #define ACHORDION_STREAK
+#define RETRO_TAPPING_PER_KEY
