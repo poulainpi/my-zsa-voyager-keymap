@@ -29,15 +29,15 @@
 #else
 
 // Short aliases for home row mods and other tap-hold keys.
-#define HOME_C LGUI(KC_C)
-#define HOME_R LALT_T(KC_R)
-#define HOME_S LCTL_T(KC_S)
-#define HOME_T LSFT_T(KC_T)
+#define HOME_C MT(MOD_LGUI, KC_C)
+#define HOME_R MT(MOD_LALT, KC_R)
+#define HOME_S MT(MOD_LCTL, KC_S)
+#define HOME_T MT(MOD_LSFT, KC_T)
 
-#define HOME_N RSFT_T(KC_N)
-#define HOME_E RCTL_T(KC_E)
-#define HOME_I LALT_T(KC_I)
-#define HOME_A RGUI(KC_A)
+#define HOME_N MT(MOD_RSFT, KC_N)
+#define HOME_E MT(MOD_RCTL, KC_E)
+#define HOME_I MT(MOD_LALT, KC_I)
+#define HOME_A MT(MOD_RGUI, KC_A)
 
 // Copy of the `record` and `keycode` args for the current active tap-hold key.
 static keyrecord_t tap_hold_record;
