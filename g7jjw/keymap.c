@@ -716,6 +716,8 @@ tap_dance_action_t tap_dance_actions[] = {
 #define HOME_I MT(MOD_LALT, KC_I)
 #define HOME_A MT(MOD_RGUI, KC_A)
 
+#define MAGIC OSL(3)
+
 
 void matrix_scan_user(void) {
   achordion_task();
@@ -732,3 +734,11 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
 }
+
+const key_override_t s_magic_tab_override = ko_make_basic(MOD_MASK_CTRL, MAGIC, KC_TAB);
+const key_override_t r_magic_alt_tab_override = ko_make_basic(MOD_MASK_ALT, MAGIC, KC_TAB);
+
+const key_override_t **key_overrides = (const key_override_t *[]){
+    &s_magic_tab_override,
+    &r_magic_alt_tab_override
+};
