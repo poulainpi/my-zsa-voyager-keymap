@@ -38,23 +38,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     OSL(3),         KC_ENTER,                                       KC_NO,          KC_NO
   ),
   [1] = LAYOUT_voyager(
-    KC_NO,          LCTL(KC_A),     LCTL(KC_X),     TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),                                    KC_AMPR,        KC_LABK,        KC_PIPE,        KC_RABK,        KC_TILD,        KC_NO,          
-    KC_NO,          TD(DANCE_3),    MT(MOD_LALT, KC_LBRC),TD(DANCE_4),    TD(DANCE_5),    LCTL(KC_Z),                                     KC_EXLM,        MT(MOD_RSFT, KC_SLASH),TD(DANCE_6),    TD(DANCE_7),    TD(DANCE_8),    KC_NO,          
-    KC_NO,          KC_NO,          KC_RBRC,        KC_RPRN,        KC_RCBR,        LCTL(LSFT(KC_Z)),                                KC_HASH,        KC_MINUS,       KC_EQUAL,       KC_PLUS,        KC_AT,          KC_NO,          
+    KC_NO,          LCTL(KC_A),     LCTL(KC_X),     TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),                                    KC_AMPR,        KC_LABK,        KC_PIPE,        KC_RABK,        KC_TILD,        KC_NO,
+    KC_NO,          TD(DANCE_3),    MT(MOD_LALT, KC_LBRC),TD(DANCE_4),    TD(DANCE_5),    LCTL(KC_Z),                                     KC_EXLM,        MT(MOD_RSFT, KC_SLASH),TD(DANCE_6),    TD(DANCE_7),    TD(DANCE_8),    KC_NO,
+    KC_NO,          KC_NO,          KC_RBRC,        KC_RPRN,        KC_RCBR,        LCTL(LSFT(KC_Z)),                                KC_HASH,        KC_MINUS,       KC_EQUAL,       KC_PLUS,        KC_AT,          KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_DELETE,      KC_NO,          KC_NO,          KC_NO,          KC_NO,
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO
   ),
   [2] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_ASTR,        KC_6,           KC_5,           KC_4,           KC_PLUS,                                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, TD(DANCE_9),    MT(MOD_LALT, KC_1),MT(MOD_LCTL, KC_2),MT(MOD_LSFT, KC_3),KC_MINUS,                                       KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_SLASH,       KC_7,           KC_8,           KC_9,           KC_EQUAL,                                       QK_LLCK,        LCTL(LSFT(KC_TAB)),KC_APPLICATION, TD(DANCE_10),   KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_0,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_ASTR,        KC_6,           KC_5,           KC_4,           KC_PLUS,                                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, TD(DANCE_9),    MT(MOD_LALT, KC_1),MT(MOD_LCTL, KC_2),MT(MOD_LSFT, KC_3),KC_MINUS,                                       KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_SLASH,       KC_7,           KC_8,           KC_9,           KC_EQUAL,                                       QK_LLCK,        LCTL(LSFT(KC_TAB)),KC_APPLICATION, TD(DANCE_10),   KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_0,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    CW_TOGG,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    CW_TOGG,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -688,9 +688,6 @@ tap_dance_action_t tap_dance_actions[] = {
 #define HOME_I MT(MOD_LALT, KC_I)
 #define HOME_A MT(MOD_RGUI, KC_A)
 
-#define MAGIC OSL(3)
-
-
 void matrix_scan_user(void) {
   achordion_task();
 }
@@ -707,12 +704,12 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-const key_override_t s_magic_tab_override = ko_make_basic(MOD_MASK_CTRL, MAGIC, KC_TAB);
-const key_override_t r_magic_alt_tab_override = ko_make_basic(MOD_MASK_ALT, MAGIC, KC_TAB);
+const key_override_t shift_comma_minus_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_MINUS);
+const key_override_t shift_dot_underscore_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_UNDS);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &s_magic_tab_override,
-    &r_magic_alt_tab_override
+    &shift_comma_minus_override,
+    &shift_dot_underscore_override
 };
 
 bool process_detected_host_os_kb(os_variant_t detected_os) {
