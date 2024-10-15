@@ -15,4 +15,3 @@ LAYER_LOCK_ENABLE = yes
 # Custom QMK here
 SRC += features/achordion.c
 KEY_OVERRIDE_ENABLE = yes
-OS_DETECTION_ENABLE = yes

@@ -1,5 +1,4 @@
 #include "features/achordion.h"
-#include "quantum.h"
 
 
 #include QMK_KEYBOARD_H
@@ -711,22 +710,3 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_comma_minus_override,
     &shift_dot_underscore_override
 };
-
-bool process_detected_host_os_kb(os_variant_t detected_os) {
-    if (!process_detected_host_os_user(detected_os)) {
-        return false;
-    }
-
-    switch (detected_os) {
-        case OS_MACOS:
-        case OS_IOS:
-            keymap_config.swap_lctl_lgui = true;
-            keymap_config.swap_rctl_rgui = true;
-            break;
-        default:
-            keymap_config.swap_lctl_lgui = false;
-            keymap_config.swap_rctl_rgui = false;
-    }
-
-    return true;
-}
