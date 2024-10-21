@@ -8,7 +8,7 @@
 #define QUICK_TAP_TERM 0
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "g7jjw/pA0mW"
+#define SERIAL_NUMBER "g7jjw/0axx4"
 #define LAYER_STATE_8BIT
 
 #define TAPPING_TERM_PER_KEY
