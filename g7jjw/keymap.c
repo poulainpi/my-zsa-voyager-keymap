@@ -34,13 +34,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_W,           KC_L,           KC_Y,           KC_P,           KC_B,                                           KC_Z,           KC_F,           KC_O,           KC_U,           KC_QUOTE,       KC_NO,          
     OSM(MOD_LSFT),  MT(MOD_LGUI, KC_C),MT(MOD_LALT, KC_R),MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_RSFT, KC_N),MT(MOD_RCTL, KC_E),MT(MOD_LALT, KC_I),MT(MOD_RGUI, KC_A),KC_NO,          
     KC_NO,          KC_Q,           KC_J,           KC_V,           KC_D,           KC_K,                                           KC_X,           KC_H,           KC_COMMA,       KC_DOT,         KC_SCLN,        KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          KC_TAB,         LT(1,KC_SPACE), LT(4,KC_ESCAPE),                                LT(5,KC_ENTER), LT(2,KC_BSPC),  KC_NO,          KC_NO,          KC_NO,          KC_NO,          
+    KC_A,           KC_NO,          KC_NO,          KC_TAB,         LT(1,KC_SPACE), LT(4,KC_ESCAPE),                                LT(5,KC_ENTER), LT(2,KC_BSPC),  KC_NO,          KC_NO,          KC_NO,          KC_NO,          
                                                     OSL(3),         KC_ENTER,                                       KC_NO,          KC_NO
   ),
   [1] = LAYOUT_voyager(
     KC_NO,          LCTL(KC_A),     LCTL(KC_X),     TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),                                    KC_AMPR,        KC_LABK,        KC_PIPE,        KC_RABK,        KC_TILD,        KC_NO,          
     KC_NO,          TD(DANCE_3),    MT(MOD_LALT, KC_LBRC),TD(DANCE_4),    TD(DANCE_5),    LCTL(KC_Z),                                     KC_EXLM,        MT(MOD_RSFT, KC_SLASH),TD(DANCE_6),    TD(DANCE_7),    TD(DANCE_8),    KC_NO,          
-    KC_NO,          KC_NO,          KC_RBRC,        KC_RPRN,        KC_RCBR,        LCTL(LSFT(KC_Z)),                                KC_HASH,        KC_MINUS,       KC_EQUAL,       KC_PLUS,        KC_AT,          KC_NO,          
+    KC_NO,          KC_NO,          KC_RBRC,        KC_RPRN,        KC_RCBR,        LCTL(LSFT(KC_Z)),                                KC_HASH,        KC_PERC,        KC_EQUAL,       KC_PLUS,        KC_AT,          KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_DELETE,      KC_NO,          KC_NO,          KC_NO,          KC_NO,          
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO
   ),
