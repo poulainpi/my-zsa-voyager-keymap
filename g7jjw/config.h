@@ -8,8 +8,7 @@
 #define QUICK_TAP_TERM 0
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define HOLD_ON_OTHER_KEY_PRESS
-#define SERIAL_NUMBER "g7jjw/bx0VQ"
+#define SERIAL_NUMBER "g7jjw/Lerqe"
 #define LAYER_STATE_8BIT
 
 #define TAPPING_TERM_PER_KEY
