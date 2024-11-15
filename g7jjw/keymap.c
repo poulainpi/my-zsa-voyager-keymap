@@ -1,5 +1,7 @@
 #include "features/achordion.h"
 
+bool process_custom_macros(uint16_t keycode, keyrecord_t *record);
+
 
 #include QMK_KEYBOARD_H
 #include "version.h"
@@ -7,6 +9,10 @@
 #define ML_SAFE_RANGE SAFE_RANGE
 
 enum custom_keycodes {
+  ARROW,
+  DASH_ARROW,
+
+
   RGB_SLD = ML_SAFE_RANGE,
   ST_MACRO_0,
   ST_MACRO_1,
@@ -165,6 +171,7 @@ bool rgb_matrix_indicators_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_achordion(keycode, record)) { return false; }
+  if (!process_custom_macros(keycode, record)) { return false; }
 
   switch (keycode) {
     case ST_MACRO_0:
@@ -643,12 +650,32 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+bool process_custom_macros(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case ARROW:
+            if (record->event.pressed) {
+                SEND_STRING_DELAY("=> ", 5);
+            }
+            return false;
+        case DASH_ARROW:
+            if (record->event.pressed) {
+                SEND_STRING_DELAY("-> ", 5);
+            }
+            return false;
+    }
+    return true;
+}
+
 const key_override_t shift_comma_minus_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_MINUS);
 const key_override_t shift_dot_underscore_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_UNDS);
 const key_override_t shift_slash_backslash_override = ko_make_basic(MOD_MASK_SHIFT, MT(MOD_RSFT, KC_SLASH), KC_BSLS);
+const key_override_t shift_pipe_dash_arrow_override = ko_make_basic(MOD_MASK_SHIFT, KC_PIPE, DASH_ARROW);
+const key_override_t alt_pipe_arrow_override = ko_make_basic(MOD_MASK_ALT, KC_PIPE, ARROW);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_comma_minus_override,
     &shift_dot_underscore_override,
-    &shift_slash_backslash_override
+    &shift_slash_backslash_override,
+    &shift_pipe_dash_arrow_override,
+    &alt_pipe_arrow_override
 };
