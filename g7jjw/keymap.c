@@ -645,8 +645,10 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 
 const key_override_t shift_comma_minus_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_MINUS);
 const key_override_t shift_dot_underscore_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_UNDS);
+const key_override_t shift_slash_backslash_override = ko_make_basic(MOD_MASK_SHIFT, MT(MOD_RSFT, KC_SLASH), KC_BSLS);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_comma_minus_override,
-    &shift_dot_underscore_override
+    &shift_dot_underscore_override,
+    &shift_slash_backslash_override
 };
